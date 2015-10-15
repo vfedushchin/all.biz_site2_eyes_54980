@@ -1,0 +1,351 @@
+{extends file="../index.html"}
+{block name=article}{strip}
+
+
+
+{if $VITRINA_BLOCKS} 
+	<script>
+		jQuery(function(){
+			jQuery('#camera_wrap_0').camera({
+				navigation: false,
+				playPause: false,
+				thumbnails: false,
+				navigationHover: false,
+				barPosition: 'top',
+				loader: false,
+				time: 3000,
+				transPeriod:800,
+				alignment: 'center',
+				autoAdvance: true,
+				mobileAutoAdvance: true,
+				barDirection: 'leftToRight', 
+				barPosition: 'bottom',
+				easing: 'easeInOutExpo',
+				fx: 'simpleFade',
+				height: '50%',
+				minHeight: '400px',
+				hover: true,
+				pagination: true,
+				loaderColor         : '#1f1f1f', 
+				loaderBgColor       : 'transparent',
+				loaderOpacity       : 1,
+				loaderPadding       : 0,
+				loaderStroke        : 3,
+				});
+		});
+	</script>
+
+<div class="fluid_container" >
+	<div class="camera_container">
+		<div id="camera_wrap_0">
+			<div title="slide-3" data-thumb="{$VITRINA_BLOCKS[0].img_src|replace:'dev5':'biz'|replace:'small/':''}"  data-link="{$VITRINA_BLOCKS[0].href}" data-src="{$VITRINA_BLOCKS[0].img_src|replace:'dev5':'biz'|replace:'small/':''}">
+				<div class="camera_caption fadeIn">
+					<div>
+						<h1>{$VITRINA_BLOCKS[0].product_name|escape}</h1>
+						<span class="price">
+							{if $VITRINA_BLOCKS[0].price_native}
+								{$VITRINA_BLOCKS[0].price_native} {$props->get('finance.native_currency_txt_code')}
+							{elseif (float)$VITRINA_BLOCKS[0].price_foreign}
+								{$VITRINA_BLOCKS[0].price_foreign} {$scurrency}
+							{/if}
+						</span>
+						<a href="{$VITRINA_BLOCKS[0].href}">Подробнее</a> 
+					</div>
+				</div>
+			</div>
+
+			<div title="slide-1" data-thumb="{$VITRINA_BLOCKS[1].img_src|replace:'dev5':'biz'|replace:'small/':''}"  data-link="{$VITRINA_BLOCKS[1].href}" data-src="{$VITRINA_BLOCKS[1].img_src|replace:'dev5':'biz'|replace:'small/':''}">
+				<div class="camera_caption fadeIn">
+					<div>
+						<h1>{$VITRINA_BLOCKS[1].product_name|escape}</h1>
+						<span class="price">
+							{if $VITRINA_BLOCKS[1].price_native}
+								{$VITRINA_BLOCKS[1].price_native} {$props->get('finance.native_currency_txt_code')}
+							{elseif (float)$VITRINA_BLOCKS[1].price_foreign}
+								{$VITRINA_BLOCKS[1].price_foreign} {$scurrency}
+							{/if}
+						</span>
+						<a href="{$VITRINA_BLOCKS[1].href}">Подробнее</a> 
+					</div>
+				</div>
+			</div>
+
+			<div title="slide-2" data-thumb="{$VITRINA_BLOCKS[2].img_src|replace:'dev5':'biz'|replace:'small/':''}"  data-link="{$VITRINA_BLOCKS[2].href}" data-src="{$VITRINA_BLOCKS[2].img_src|replace:'dev5':'biz'|replace:'small/':''}">
+			<div class="camera_caption fadeIn">
+					<div>
+						<h1>{$VITRINA_BLOCKS[2].product_name|escape}</h1>
+						<span class="price">
+							{if $VITRINA_BLOCKS[2].price_native}
+								{$VITRINA_BLOCKS[2].price_native} {$props->get('finance.native_currency_txt_code')}
+							{elseif (float)$VITRINA_BLOCKS[2].price_foreign}
+								{$VITRINA_BLOCKS[2].price_foreign} {$scurrency}
+							{/if}
+						</span>
+						<a href="{$VITRINA_BLOCKS[2].href}">Подробнее</a> 
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+	  
+	<div class="clear"></div>
+{/if}
+
+
+
+</div>
+
+	<div id="banner0" class="banners">
+	    <div class="container">
+	        <div class="row">
+	            <div class="col-sm-4 banner-1">
+	                <div class="banner-box">
+	                    <a class="clearfix" href="#">
+	                        <img src="{$template}/image/banner-1.jpg" alt="banner-1" class="img-responsive">
+	                        <div class="s-desc">
+	                            <h3>COLOURED</h3>
+	                            <h1>&amp; TINTED</h1>
+	                            <span></span></div>
+	                    </a>
+	                </div>
+	            </div>
+	            <div class="col-sm-4 banner-2">
+	                <div class="banner-box">
+	                    <a class="clearfix" href="#">
+	                        <img src="{$template}/image/banner-2.jpg" alt="banner-1" class="img-responsive">
+	                        <div class="s-desc">
+	                            <h3>Lens &amp;</h3>
+	                            <h1>EYES CARE</h1>
+	                            <span></span></div>
+	                    </a>
+	                </div>
+	            </div>
+	            <div class="col-sm-4 banner-3">
+	                <div class="banner-box">
+	                    <a class="clearfix" href="#">
+	                        <img src="{$template}/image/banner-3.jpg" alt="banner-1" class="img-responsive">
+	                        <div class="s-desc">
+	                            <h3>CONTACT LENS</h3>
+	                            <h1>ACCESSORIES</h1>
+	                            <span></span></div>
+	                    </a>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+
+{if $BLOCK_NEWS}
+	<section class="parallax well2 wow fadeIn" data-url="{$template}/image/parallax-1.jpg" data-mobile="true" data-speed="1"> 
+    <div class="container">
+      <div class="content">
+			    <h1>{$BLOCK_NEWS[1].title|escape:"htmlall"}</h1>
+			    <h2>{$BLOCK_NEWS[1].title|escape:"htmlall"} : {$BLOCK_NEWS[1].body|escape:"htmlall"}</h2>
+			    <a href="{$BLOCK_NEWS[1].href}"><span>more info</span></a>
+			</div>
+    </div>
+  </section>
+ {/if}
+
+
+
+	<div class="box_html custom-banner1">
+    <div class="bg-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="info-block fa-phone-square">
+                        <div class="cnt">
+                            <h1>{$GROUPS_SERVICES[0].name|escape:"htmlall"} <span></span></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="info-block mod1 fa-truck">
+                        <div class="cnt">
+                        		<h1>{$GROUPS_SERVICES[1].name|escape:"htmlall"} <span></span></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	</div>
+
+
+
+
+
+
+
+<div class="container ">
+
+
+
+
+
+
+
+
+<div class="box">
+	<!-- <div class="box-heading">{$props->get('lng.products_services')|capitalize}</div> -->
+	<div class="box-heading"><h3>{$props->get('lng.products')|capitalize}</h3></div>
+</div>
+
+
+<div class="wrapper float-fix">
+	
+	{$n=1}
+	{foreach from=$GOODS_BLOCKS item=item  key=key}
+
+	
+	<div class="product-layout col-lg-3 col-md-3 col-sm-3 col-xs-12">
+    <div class="product-thumb transition">
+        <div class="image">
+            <a href="{$item.href}">
+							<img alt="{$item.product_name}" src="{$item.img_src}">
+						</a>
+        </div>
+        <div class="caption">
+            <div class="price">
+							<span>
+								{$item.price_native}
+								<span class="currency-new"> {$item.currency}</span>
+							</span>
+						</div>
+            <div class="name"><a href="{$item.href}">{substr($item.product_name|escape:"htmlall",0,270)}... </a></div>
+            <div class="description">
+            	{substr($item.description,0,570)}
+    				</div>
+
+        </div>
+
+        <div class="cart-button">
+					<a {if !$IS_SHOP_CART_ACTIVE}href="javascript: //" {/if} class="product-btn-add button addToCart {if !$IS_SHOP_CART_ACTIVE OR $TYPE <> 'goods'}b-button_type_order{/if}" id="{$item.id}" title="Add to cart" onClick="ga('send', 'event', 'CPA', 'order', 'order_button'); {if $IS_SHOP_CART_ACTIVE AND $TYPE eq 'goods'
+								  }addtocart({$item.id}, '{$smarty.const.COUNTRY_CODE}', 1);
+								  return false;{/if}">
+
+						<span>{if $IS_SHOP_CART_ACTIVE AND $TYPE eq 'goods'}В корзину{else}{$props->get('lng.order')}{/if}</span>
+						<i class="fa fa-shopping-cart"></i>
+					</a>
+				</div>
+
+    </div>
+	</div>
+
+  {if ($n>=8)}
+		{break}
+	{/if}
+	{$n=$n+1}
+
+	{/foreach}
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+<div class="bg-section2">
+	<div id="fb-root"></div>
+	<!-- Facebook JS SDK -->		
+		<script>
+			(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="col-content" data-equal-group="1">
+                    <div class="box_inner">
+                        <div class="facebook info">
+                            <div class="box-heading mar_bot0">
+                                <h3>FOLLOW US ON FACEBOOK</h3>
+                            </div>
+                            <div class="box-content">
+                                <div class="fb-like-box" data-href="https://www.facebook.com/TemplateMonster" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="box_html custom-banner2">
+                <div class="col-sm-4">
+                    <div class="col-content" data-equal-group="1">
+                        <div class="box_inner">
+                            <div class="fa-truck">
+                                <h3>FREE SHIPPING</h3>
+                                <p>
+                                    Donec vitae diam ut purus luctus filisis. Nullectus non eros tristique ultric.
+                                </p>
+                            </div>
+                            <div class="fa-phone">
+                                <h3>Online support</h3>
+                                <p>
+                                    Donec vitae diam ut purus luctus filisis. Nullectus non eros tristique ultric.
+                                </p>
+                            </div>
+                            <div class="fa-qrcode">
+                                <h3>GIFT CARDS</h3>
+                                <p>
+                                    Donec vitae diam ut purus luctus filisis. Nullectus non eros tristique ultric.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box_html custom-banner3">
+                <div class="col-sm-4">
+                    <div class="col-content" data-equal-group="1">
+                        <div class="box_inner">
+                            <h3>USEFUL LINKS</h3>
+                            <ul class="marked-list">
+                                <li><a href="#">Vestibulum id elementum massa</a></li>
+                                <li><a href="#">Curabitur cursus vel eros</a></li>
+                                <li><a href="#">Suspendisse dapibus ullamcorper</a></li>
+                                <li><a href="#">Eleifend pharetra</a></li>
+                                <li><a href="#">Donec ultrices quam nec erat males</a></li>
+                                <li><a href="#">Etiam ornare nisi non interdum</a></li>
+                                <li><a href="#">Phasellus eget ultrices dolor</a></li>
+                                <li><a href="#">Ut viverra urna eu</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container ">
+
+
+
+
+
+
+
+
+
+
+{/strip}{/block}
+
+{block name="custom_js"}
+	<script src="{$STATIC_HOST}/js/includes/showcase/showcase.js"></script>
+{/block}
